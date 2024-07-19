@@ -71,10 +71,10 @@ a:hover {
 <body>
 
 <div class="container">
-    <h2>Jisajili Account</h2>
+    <h2>Jisajili Sasa</h2>
     <form id="signup-form">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
 
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Enter your password" required>
@@ -86,28 +86,27 @@ a:hover {
    
 </div>
 <script type="module">
-
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js';
+import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js';
 import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js';
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDpDRju6_w4_YJqIJa39IyoAIw3ZTYYz2k",
-    authDomain: "frontended-test.firebaseapp.com",
-    projectId: "frontended-test",
-    storageBucket: "frontended-test.appspot.com",
-    messagingSenderId: "1029250073555",
-    appId: "1:1029250073555:web:1d0b24ec1bd092dd81a526"
+    apiKey: "AIzaSyBL-izKj589SXMYvuKGUJQ939670YwKcOE",
+    authDomain: "frontended-7979d.firebaseapp.com",
+    projectId: "frontended-7979d",
+    storageBucket: "frontended-7979d.appspot.com",
+    messagingSenderId: "822716049617",
+  appId: "1:822716049617:web:06a6aae58e13d435377df0"
   };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-
 const signupForm = document.getElementById('signup-form');
 signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = document.getElementById('username').value;
+    const email = document.getElementById('email').value; // Use email field value directly
     const password = document.getElementById('password').value;
     const phone = document.getElementById('phone').value;
 
@@ -135,3 +134,9 @@ signupForm.addEventListener('submit', async (e) => {
 </script>
 </body>
 </html>
+
+
+
+
+
+
